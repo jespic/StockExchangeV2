@@ -19,7 +19,7 @@ namespace StockExchange.Controllers
         public async Task<IActionResult> Index()
         {
             return base.View(
-                await service.GetCountriesAsync()
+                await countryService.GetCountriesAsync()
                 );
         }
 

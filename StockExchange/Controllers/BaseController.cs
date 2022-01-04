@@ -6,10 +6,12 @@ namespace StockExchange.Controllers
 {
     public class BaseController : Controller
     {
-        protected CountryService service;
+        protected CountryService countryService;
+        protected CurrencyService currencyService;
         public BaseController(IConfiguration configuration)
         {
-            service = new CountryService(configuration.GetConnectionString("JsonBD"));
+            countryService = new CountryService(configuration.GetConnectionString("JsonBD"));
+            currencyService = new CurrencyService(configuration.GetConnectionString("JsonBD"));
         }
     }
 }
